@@ -41,4 +41,33 @@ async function initWorkout() {
       day: "numeric"
     };
 
-    
+    return new Date(date).toLocaleDateString(options);
+}
+
+function renderWorkoutSummary(summary) {
+  const container = document.querySelector(".workout-stats");
+
+  const workoutKeyMap = {
+    date: "Date",
+    totalDuration: "Total Workout Duration",
+    numExercises: "Exercises Performed",
+    totalWeight: "Total Weight Lifted",
+    totalSets: "Total Sets Performed",
+    totalReps: "Total Reps Performed",
+    totalDistance: "Total Distance Covered"
+  };
+
+  Object.keys(summary).forEach(key => {
+    const p = document.createElement("p");
+    const strong = document.createElement("strong");
+
+    strong.textContent = workoutKeyMap[key];
+    const textNode = document.createTextNode(`: ${summary[key]}`);
+
+    p.appendChild(strong);
+    p.appendChild(textNode);
+
+    container.appendChild(p);
+  });
+}
+
