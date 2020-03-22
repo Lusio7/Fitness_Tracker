@@ -49,4 +49,41 @@ function handleWorkoutTypeChange(event) {
     validateInputs();
   }
 
+  function validateInputs() {
+    let isValid = true;
   
+    if (workoutType === "resistance") {
+      if (nameInput.value.trim() === "") {
+        isValid = false;
+      }
+  
+      if (weightInput.value.trim() === "") {
+        isValid = false;
+      }
+  
+      if (setsInput.value.trim() === "") {
+        isValid = false;
+      }
+  
+      if (repsInput.value.trim() === "") {
+        isValid = false;
+      }
+  
+      if (resistanceDurationInput.value.trim() === "") {
+        isValid = false;
+      }
+    } else if (workoutType === "cardio") {
+      if (cardioNameInput.value.trim() === "") {
+        isValid = false;
+      }
+  
+      if (durationInput.value.trim() === "") {
+        isValid = false;
+      }
+  
+      if (distanceInput.value.trim() === "") {
+        isValid = false;
+      }
+    }
+
+    
