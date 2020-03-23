@@ -13,7 +13,7 @@ app.use(express.json())
 
 app.use(express.static("public"))
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout_trackerdb", { useMongoClient: true })
+mongoose.connect(process.env.MONGODB_URI || "mongodb://lusiof@gmail.com:Lusiofiliba7*@ds157475.mlab.com:57475/heroku_6vjqk21b", { useMongoClient: true })
 
 
 app.use(require("./routes/apiroutes.js"))
